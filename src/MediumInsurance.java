@@ -1,20 +1,16 @@
-public class MediumInsurance {
-    public MediumInsurance() {
-    }
+public class MediumInsurance extends IncomeBasedInsurance {
 
-    double medium(double income) {
-        return (income - getModifier()) * getWeight() + getConstant();
-    }
-
-    int getConstant() {
+    @Override
+    public int getConstant() {
         return 35600;
     }
-
-    double getWeight() {
+    @Override
+    public double getWeight() {
         return 0.2;
     }
 
-    int getModifier() {
+    @Override
+    public int getAdjustment() {
         return 10000;
     }
 }

@@ -1,20 +1,17 @@
-public class LowInsurance {
-    public LowInsurance() {
-    }
+public class LowInsurance extends IncomeBasedInsurance {
 
-    double low(double income) {
-        return (income - getAdjustment()) * getWeight() + getConstant();
-    }
-
-    int getAdjustment() {
+    @Override
+    public int getAdjustment() {
         return 0;
     }
 
-    int getConstant() {
+    @Override
+    public int getConstant() {
         return 0;
     }
 
-    double getWeight() {
+    @Override
+    public double getWeight() {
         return 0.365;
     }
 }

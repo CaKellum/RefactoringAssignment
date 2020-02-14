@@ -1,19 +1,20 @@
 public class InsuranceCalculator {
 
-    private final VeryHighInsurance veryHighInsurance = new VeryHighInsurance();
-    private final HighInsurance highInsurance = new HighInsurance();
-    private final MediumInsurance mediumInsurance = new MediumInsurance();
-    private final LowInsurance lowInsurance = new LowInsurance();
+    private IncomeBasedInsurance cal;
 
     public double calculateInsurance(double income) {
         if (income <= 10000) {
-            return lowInsurance.low(income);
+            cal = new LowInsurance();
+            return cal.calculate(income);
         } else if (income <= 30000) {
-            return mediumInsurance.medium(income);
+            cal = new MediumInsurance();
+            return cal.calculate(income);
         } else if (income <= 60000) {
-            return highInsurance.high(income);
+            cal = new HighInsurance();
+            return cal.calculate(income);
         } else {
-            return veryHighInsurance.veryHigh(income);
+            cal = new VeryHighInsurance();
+            return cal.calculate(income);
         }
     }
 
