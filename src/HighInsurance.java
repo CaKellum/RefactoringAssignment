@@ -1,5 +1,9 @@
 public class HighInsurance extends IncomeBasedInsurance {
 
+    HighInsurance(){
+        System.out.println("high");
+    }
+
     @Override
     public int getConstant() {
         return 76500;

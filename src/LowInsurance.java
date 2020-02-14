@@ -1,5 +1,9 @@
 public class LowInsurance extends IncomeBasedInsurance {
 
+    LowInsurance(){
+        System.out.println("low");
+    }
+
     @Override
     public int getAdjustment() {
         return 0;
